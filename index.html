@@ -1,6 +1,43 @@
 <html lang="en"><head>
   <style>
+  /* Position welcomeDiv at the top on all devices */
+#welcomeDiv {
+  position: fixed !important;
+  left: 50% !important;
+  top: 0 !important;
+  transform: translateX(-50%) !important;
+  max-width: 90vw !important;
+  width: auto !important;
+  margin-left: 0 !important; /* Override the original margin-left: 33% */
+  z-index: 9999999 !important;
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important; /* Remove top border radius */
+  border-top-right-radius: 0 !important; /* Remove top border radius */
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 767px) {
+  #welcomeDiv {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
   
+  #welcomeDiv p {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+}
+
+/* Optional: Add a subtle animation for the welcomeDiv */
+@keyframes slideDown {
+  from { transform: translate(-50%, -100%); }
+  to { transform: translate(-50%, 0); }
+}
+
+#welcomeDiv.visible {
+  animation: slideDown 0.3s ease-out forwards;
+}
   /* Mobile-friendly popup centering */
 @media screen and (max-width: 767px) {
   /* General popup centering */

@@ -1,5 +1,19 @@
 <html lang="en"><head>
   <style>
+  /* Add this CSS to your existing styles to reduce chat size by 30% */
+#chat {
+  transform: scale(0.7) !important; 
+  transform-origin: center center !important;
+  margin: 15% auto !important; /* Add some margin to compensate for the scale reduction */
+  padding: 10px !important;
+  background-color: white !important; /* Optional: ensure background is visible */
+  border-radius: 10px !important; /* Optional: rounded corners */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3) !important; /* Optional: add shadow for better visibility */
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(0.7) !important; /* Center and scale down */
+}
   /* Mobile-friendly popup centering */
 @media screen and (max-width: 767px) {
   /* General popup centering */

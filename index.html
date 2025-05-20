@@ -10,10 +10,43 @@
   border-radius: 10px !important; /* Optional: rounded corners */
   box-shadow: 0 0 10px rgba(0,0,0,0.3) !important; /* Optional: add shadow for better visibility */
   position: fixed !important;
-  left: 50% !important;
+  right: 10px !important; /* Position to the right side */
+  left: auto !important; /* Override any left positioning */
   top: 50% !important;
-  transform: translate(-50%, -50%) scale(0.7) !important; /* Center and scale down */
+  transform: translateY(-50%) scale(0.7) !important; /* Vertical center only and scale down */
+  text-align: right !important; /* Right align text content */
 }
+
+/* Ensure content inside the chat is properly aligned */
+#chat img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+#chat span, #chat p, #chat h4 {
+  text-align: right !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  display: block !important;
+}
+
+/* Make phone number stand out */
+#chat h4 {
+  font-weight: bold !important;
+  color: #0F396D !important;
+  padding: 5px !important;
+}
+
+/* Media query to handle mobile responsiveness with the reduced size */
+@media screen and (max-width: 767px) {
+  #chat {
+    width: 80% !important; /* Control width on mobile */
+    max-width: none !important; /* Override previous max-width */
+    right: 10px !important; /* Keep it on the right side */
+    transform-origin: right center !important; /* Scale from the right side */
+  }
+}
+
   /* Mobile-friendly popup centering */
 @media screen and (max-width: 767px) {
   /* General popup centering */

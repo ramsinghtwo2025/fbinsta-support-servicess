@@ -1,5 +1,69 @@
 <html lang="en"><head>
   <style>
+    /* CSS to reduce the chat popup size by 50% without affecting text sizes */
+
+/* Target the chat div with a highly specific selector */
+div#chat {
+  /* Scale transformation to reduce size by 50% */
+  transform: scale(0.5) !important;
+  transform-origin: center center !important;
+  
+  /* Ensure proper positioning */
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  margin: 0 !important;
+  
+  /* Combined transform for both scaling and positioning */
+  transform: translate(-50%, -50%) scale(0.5) !important;
+  
+  /* High z-index to ensure visibility */
+  z-index: 9999999 !important;
+  
+  /* Set a base width to ensure proper scaling */
+  width: auto !important;
+  max-width: 80% !important;
+  
+  /* Add some padding for better appearance */
+  padding: 20px !important;
+  
+  /* Fix any potential background issues */
+  background-color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Increase text sizes to compensate for scaling */
+div#chat span {
+  font-size: 48px !important; /* 24px × 2 = 48px to compensate for 0.5 scale */
+}
+
+div#chat p {
+  font-size: 32px !important; /* Original size × 2 */
+}
+
+div#chat h4 {
+  font-size: 44px !important; /* 22px × 2 = 44px */
+}
+
+/* Adjust image size */
+div#chat img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure arrow-down is properly sized */
+div#chat .arrow-down svg {
+  height: 2em !important; /* Double the original height */
+}
+
+/* For mobile devices */
+@media screen and (max-width: 767px) {
+  div#chat {
+    max-width: 90% !important;
+    padding: 15px !important;
+  }
+}
 /* CSS to reduce the welcomeDiv popup size by 30% and center it on mobile devices without affecting text size */
 
 /* Target the welcomeDiv popup specifically */

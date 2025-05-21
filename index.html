@@ -1,117 +1,57 @@
 <html lang="en"><head>
   <style>
-    /* CSS to reduce the chat popup size by 50% without affecting text sizes */
+/* Responsive styling for chat popup - reduced by 40% and centered */
+#chat {
+  position: fixed;
+  width: 60%; /* Reduced by 40% from original size */
+  max-width: 300px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-/* Target the chat div with a highly specific selector */
-div#chat {
-  /* Scale transformation to reduce size by 50% */
-  transform: scale(0.5) !important;
-  transform-origin: center center !important;
-  
-  /* Ensure proper positioning */
+/* Center the welcomeDiv popup for mobile */
+#welcomeDiv {
   position: fixed !important;
-  left: 50% !important;
-  top: 50% !important;
-  margin: 0 !important;
-  
-  /* Combined transform for both scaling and positioning */
-  transform: translate(-50%, -50%) scale(0.5) !important;
-  
-  /* High z-index to ensure visibility */
-  z-index: 9999999 !important;
-  
-  /* Set a base width to ensure proper scaling */
-  width: auto !important;
-  max-width: 80% !important;
-  
-  /* Add some padding for better appearance */
-  padding: 20px !important;
-  
-  /* Fix any potential background issues */
-  background-color: white !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Increase text sizes to compensate for scaling */
-div#chat span {
-  font-size: 48px !important; /* 24px × 2 = 48px to compensate for 0.5 scale */
-}
-
-div#chat p {
-  font-size: 32px !important; /* Original size × 2 */
-}
-
-div#chat h4 {
-  font-size: 44px !important; /* 22px × 2 = 44px */
-}
-
-/* Adjust image size */
-div#chat img {
-  max-width: 100% !important;
+  width: 90% !important;
+  max-width: 500px !important;
   height: auto !important;
-}
-
-/* Ensure arrow-down is properly sized */
-div#chat .arrow-down svg {
-  height: 2em !important; /* Double the original height */
-}
-
-/* For mobile devices */
-@media screen and (max-width: 767px) {
-  div#chat {
-    max-width: 90% !important;
-    padding: 15px !important;
-  }
-}
-/* CSS to reduce the welcomeDiv popup size by 30% and center it on mobile devices without affecting text size */
-
-/* Target the welcomeDiv popup specifically */
-#welcomeDiv.answer_list {
-  /* Reduce width by 30% from the original 550px */
-  width: 385px !important; /* 550px × 0.7 = 385px */
-  
-  /* Center the popup on all devices */
-  position: fixed !important; /* Change from absolute to fixed for better centering */
+  margin: 0 !important;
   left: 50% !important;
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
-  
-  /* Remove the original margin that was pushing it right */
-  margin-left: 0 !important;
-  
-  /* Maintain other styling */
-  background-color: rgb(40 40 40 / 80%) !important;
-  height: auto !important;
-  z-index: 99999999 !important;
-  border: 1px solid transparent !important;
-  border-color: #d6d8db !important;
-  border-radius: .5rem !important;
-}
-
-/* Ensure the text maintains its original size */
-#welcomeDiv p, 
-#welcomeDiv strong,
-#welcomeDiv span {
-  font-size: 16px !important; /* Preserving the original font size */
+  z-index: 999999 !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
 }
 
 /* Mobile-specific adjustments */
-@media screen and (max-width: 767px) {
-  #welcomeDiv.answer_list {
-    width: 70% !important; /* Use percentage instead of fixed pixels on mobile */
-    max-width: 385px !important; /* Maximum same as desktop */
-    
-    /* Additional mobile styling */
-    box-sizing: border-box !important;
-    padding: 10px !important;
+@media only screen and (max-width: 767px) {
+  #chat {
+    width: 80%; /* Slightly larger on mobile but still reduced */
+    max-width: 280px;
+    padding: 10px;
   }
   
-  /* Ensure text remains readable on small screens */
-  #welcomeDiv p {
-    margin-top: 8px !important;
-    padding: 0 3px !important;
+  #welcomeDiv {
+    width: 95% !important;
+    max-width: 350px !important;
   }
+  
+  #welcomeDiv p {
+    font-size: 14px !important;
+  }
+}
+
+/* Fix for any scroll issues */
+body.popup-open {
+  overflow: hidden;
 }
  </style>
   <meta charset="utf-8">

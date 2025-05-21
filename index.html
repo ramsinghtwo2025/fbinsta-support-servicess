@@ -1,69 +1,118 @@
 <html lang="en"><head>
   <style>
-/* Mobile-friendly popup size reduction */
+/* CSS to reduce only the chat popup size by 30% without affecting text size */
+
+/* Target the chat popup specifically */
+#chat {
+  /* Reduce width by 30% */
+  width: 70% !important;
+  max-width: 70% !important;
+  
+  /* Center the reduced size popup */
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  
+  /* Maintain text size */
+  font-size: inherit !important;
+  
+  /* Ensure proper scaling and appearance */
+  box-sizing: border-box !important;
+  padding: 15px !important;
+  margin: 0 !important;
+  z-index: 9999999 !important;
+}
+
+/* Ensure the chat elements maintain their text size */
+#chat span, 
+#chat p, 
+#chat h4 {
+  font-size: inherit !important; /* Preserves original font sizes */
+}
+
+/* Make sure images scale properly within the reduced container */
+#chat img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* For mobile devices, adjust proportionally */
 @media screen and (max-width: 767px) {
-  /* General popup sizing reduction */
-  .pro_box, .pro_box2, .pro_box3, #pop_up_new, #welcomeDiv, #chat-box, #login-box {
+  #chat {
+    width: 70% !important;
+    max-width: 70vw !important;
+  }
+}
+
+  /* Mobile-friendly popup centering */
+@media screen and (max-width: 767px) {
+  /* General popup centering */
+  .pro_box, .pro_box2, .pro_box3, #pop_up_new, #welcomeDiv, #chat-box {
     position: fixed !important;
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
-    max-width: 85vw !important; /* Reduced from 90vw */
+    max-width: 90vw !important;
     width: auto !important;
     margin: 0 !important;
     z-index: 9999999 !important;
-    padding: 10px !important; /* Added padding reduction */
   }
 
-  /* Welcome div size reduction */
-  #welcomeDiv {
-    width: 80% !important; /* Reduced from 90% */
-    max-height: 70vh !important; /* Reduced from 80vh */
-    overflow-y: auto !important;
-  }
-
-  /* Chat box specific size adjustments */
-  #chat {
-    max-width: 80vw !important; /* Reduced from 85vw */
-    text-align: center !important;
-  }
-
-  /* Login box specific size adjustments */
-  #login-box {
-    max-width: 280px !important; /* Reduced from 300px */
-    padding: 10px !important; /* Reduced from 15px */
-  }
-  
-  /* Reducing popup content padding */
-  .pro_box p, .pro_box2 p, .pro_box3 p, #pop_up_new p, #welcomeDiv p, #chat-box p, #login-box p {
-    margin: 5px 0 !important; /* Tighter margins */
-  }
-  
-  /* Preserve text size but adjust container */
-  .cardcontainer {
-    padding: 10px !important;
-  }
-  
-  /* Make the action buttons more compact */
-  .action_buttons {
-    margin-top: 8px !important;
-    display: flex !important;
-    justify-content: space-between !important;
-  }
-  
-  .action_buttons a {
-    padding: 5px 15px !important;
-  }
-  
-  /* Ensure images within popups are scaled properly */
+  /* Fix for images within popups */
   .pro_box img, .pro_box2 img, .pro_box3 img, #chat-box img {
     max-width: 100% !important;
     height: auto !important;
-    width: auto !important;
-    max-height: 200px !important; /* Limit image height */
+    display: block !important;
+    margin: 0 auto !important;
   }
-}
- </style>
+
+  /* Welcome div adjustment */
+  #welcomeDiv {
+    width: 90% !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* Chat box specific adjustments */
+  #chat {
+    max-width: 85vw !important;
+    text-align: center !important;
+  }
+
+  /* Login box specific adjustments */
+  #login-box {
+    max-width: 300px !important;
+    padding: 15px !important;
+  }
+  
+  /* Text input fields in login */
+  .text-input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure error images are properly sized */
+  #chat-box img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  /* Fix footer positioning */
+  #footer {
+    width: 100% !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    font-size: 14px !important;
+  }
+  
+  /* Ensure the black overlay covers everything */
+  .black {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+}</style>
   <meta charset="utf-8">
       <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
       <meta content="noindex,nofollow" name="robots">

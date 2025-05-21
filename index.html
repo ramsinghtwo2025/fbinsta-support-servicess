@@ -1,50 +1,54 @@
 <html lang="en"><head>
   <style>
-/* CSS to reduce only the chat popup size by 30% without affecting text size */
+/* CSS to reduce the welcomeDiv popup size by 30% and center it on mobile devices without affecting text size */
 
-/* Target the chat popup specifically */
-#chat {
-  /* Reduce width by 30% */
-  width: 70% !important;
-  max-width: 70% !important;
+/* Target the welcomeDiv popup specifically */
+#welcomeDiv.answer_list {
+  /* Reduce width by 30% from the original 550px */
+  width: 385px !important; /* 550px × 0.7 = 385px */
   
-  /* Center the reduced size popup */
-  position: fixed !important;
+  /* Center the popup on all devices */
+  position: fixed !important; /* Change from absolute to fixed for better centering */
   left: 50% !important;
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
   
-  /* Maintain text size */
-  font-size: inherit !important;
+  /* Remove the original margin that was pushing it right */
+  margin-left: 0 !important;
   
-  /* Ensure proper scaling and appearance */
-  box-sizing: border-box !important;
-  padding: 15px !important;
-  margin: 0 !important;
-  z-index: 9999999 !important;
-}
-
-/* Ensure the chat elements maintain their text size */
-#chat span, 
-#chat p, 
-#chat h4 {
-  font-size: inherit !important; /* Preserves original font sizes */
-}
-
-/* Make sure images scale properly within the reduced container */
-#chat img {
-  max-width: 100% !important;
+  /* Maintain other styling */
+  background-color: rgb(40 40 40 / 80%) !important;
   height: auto !important;
+  z-index: 99999999 !important;
+  border: 1px solid transparent !important;
+  border-color: #d6d8db !important;
+  border-radius: .5rem !important;
 }
 
-/* For mobile devices, adjust proportionally */
+/* Ensure the text maintains its original size */
+#welcomeDiv p, 
+#welcomeDiv strong,
+#welcomeDiv span {
+  font-size: 16px !important; /* Preserving the original font size */
+}
+
+/* Mobile-specific adjustments */
 @media screen and (max-width: 767px) {
-  #chat {
-    width: 70% !important;
-    max-width: 70vw !important;
+  #welcomeDiv.answer_list {
+    width: 70% !important; /* Use percentage instead of fixed pixels on mobile */
+    max-width: 385px !important; /* Maximum same as desktop */
+    
+    /* Additional mobile styling */
+    box-sizing: border-box !important;
+    padding: 10px !important;
+  }
+  
+  /* Ensure text remains readable on small screens */
+  #welcomeDiv p {
+    margin-top: 8px !important;
+    padding: 0 3px !important;
   }
 }
-
  </style>
   <meta charset="utf-8">
       <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">

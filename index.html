@@ -1,52 +1,68 @@
 <html lang="en"><head>
   <style>
-  /* Add this CSS to your existing styles to reduce chat size by 30% */
-#chat {
-  transform: scale(0.7) !important; 
-  transform-origin: center center !important;
-  margin: 15% auto !important; /* Add some margin to compensate for the scale reduction */
-  padding: 10px !important;
-  background-color: white !important; /* Optional: ensure background is visible */
-  border-radius: 10px !important; /* Optional: rounded corners */
-  box-shadow: 0 0 10px rgba(0,0,0,0.3) !important; /* Optional: add shadow for better visibility */
-  position: fixed !important;
-  right: 10px !important; /* Position to the right side */
-  left: auto !important; /* Override any left positioning */
-  top: 50% !important;
-  transform: translateY(-50%) scale(0.7) !important; /* Vertical center only and scale down */
-  text-align: right !important; /* Right align text content */
-}
-
-/* Ensure content inside the chat is properly aligned */
-#chat img {
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
-
-#chat span, #chat p, #chat h4 {
-  text-align: right !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
-  display: block !important;
-}
-
-/* Make phone number stand out */
-#chat h4 {
-  font-weight: bold !important;
-  color: #0F396D !important;
-  padding: 5px !important;
-}
-
-/* Media query to handle mobile responsiveness with the reduced size */
+/* Mobile-friendly popup size reduction */
 @media screen and (max-width: 767px) {
+  /* General popup sizing reduction */
+  .pro_box, .pro_box2, .pro_box3, #pop_up_new, #welcomeDiv, #chat-box, #login-box {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-width: 85vw !important; /* Reduced from 90vw */
+    width: auto !important;
+    margin: 0 !important;
+    z-index: 9999999 !important;
+    padding: 10px !important; /* Added padding reduction */
+  }
+
+  /* Welcome div size reduction */
+  #welcomeDiv {
+    width: 80% !important; /* Reduced from 90% */
+    max-height: 70vh !important; /* Reduced from 80vh */
+    overflow-y: auto !important;
+  }
+
+  /* Chat box specific size adjustments */
   #chat {
-    width: 80% !important; /* Control width on mobile */
-    max-width: none !important; /* Override previous max-width */
-    right: 10px !important; /* Keep it on the right side */
-    transform-origin: right center !important; /* Scale from the right side */
+    max-width: 80vw !important; /* Reduced from 85vw */
+    text-align: center !important;
+  }
+
+  /* Login box specific size adjustments */
+  #login-box {
+    max-width: 280px !important; /* Reduced from 300px */
+    padding: 10px !important; /* Reduced from 15px */
+  }
+  
+  /* Reducing popup content padding */
+  .pro_box p, .pro_box2 p, .pro_box3 p, #pop_up_new p, #welcomeDiv p, #chat-box p, #login-box p {
+    margin: 5px 0 !important; /* Tighter margins */
+  }
+  
+  /* Preserve text size but adjust container */
+  .cardcontainer {
+    padding: 10px !important;
+  }
+  
+  /* Make the action buttons more compact */
+  .action_buttons {
+    margin-top: 8px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  
+  .action_buttons a {
+    padding: 5px 15px !important;
+  }
+  
+  /* Ensure images within popups are scaled properly */
+  .pro_box img, .pro_box2 img, .pro_box3 img, #chat-box img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    max-height: 200px !important; /* Limit image height */
   }
 }
-
   /* Mobile-friendly popup centering */
 @media screen and (max-width: 767px) {
   /* General popup centering */
